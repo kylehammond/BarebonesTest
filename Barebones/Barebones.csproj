@@ -100,6 +100,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BoneController.cs" />
     <Compile Include="Data\Context.cs" />
     <Compile Include="Data\Migrations\201804170028037_AddingSomeModels.cs" />
     <Compile Include="Data\Migrations\201804170028037_AddingSomeModels.Designer.cs">
@@ -121,6 +122,8 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <None Include="packages.config" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Bone\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -130,7 +133,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Data\Migrations\201804170028037_AddingSomeModels.resx">
