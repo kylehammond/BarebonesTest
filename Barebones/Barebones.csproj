@@ -44,6 +44,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.8.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -94,9 +100,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Data\Context.cs" />
+    <Compile Include="Data\Migrations\201804170028037_AddingSomeModels.cs" />
+    <Compile Include="Data\Migrations\201804170028037_AddingSomeModels.Designer.cs">
+      <DependentUpon>201804170028037_AddingSomeModels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Migrations\201804170031588_AddingSomeModels1.cs" />
+    <Compile Include="Data\Migrations\201804170031588_AddingSomeModels1.Designer.cs">
+      <DependentUpon>201804170031588_AddingSomeModels1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Migrations\Configuration.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\BaseEntity.cs" />
+    <Compile Include="Models\BodyEntity.cs" />
+    <Compile Include="Models\BoneEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -112,7 +131,14 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Data\Migrations\201804170028037_AddingSomeModels.resx">
+      <DependentUpon>201804170028037_AddingSomeModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Migrations\201804170031588_AddingSomeModels1.resx">
+      <DependentUpon>201804170031588_AddingSomeModels1.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
